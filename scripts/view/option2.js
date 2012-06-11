@@ -4,7 +4,7 @@ define(['jquery',
 	'text!templates/option-2.html'], function($, _, Backbone, template) {
 	
 	var option2 = Backbone.View.extend({
-		el: $('#container'),
+		el: $('#general-container'),
 
 		render: function() {
 

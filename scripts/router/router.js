@@ -19,6 +19,7 @@ define(['jquery',
 		},
 
 		option2: function() {
+			console.log('entra ..');
 			option2.render();
 		},
 
