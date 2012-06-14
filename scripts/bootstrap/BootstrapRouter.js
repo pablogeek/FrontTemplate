@@ -15,6 +15,7 @@ define(['jquery',
 		},
 
 		option1: function() {
+			console.log('entra');
 			option1.render();
 		},
 
@@ -36,5 +37,7 @@ define(['jquery',
 		Backbone.history.start();
 	};
 
+
 	return new BootstrapRouter();
+
 });

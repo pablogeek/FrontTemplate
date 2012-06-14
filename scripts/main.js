@@ -18,7 +18,10 @@ require.config({
 	}
 });
 
-require(['app/app'], function(app) {
-	app.init();
+require(['bootstrap/BootstrapView',
+			'bootstrap/BootstrapRouter'], function(bootstrapView, bootstrapRouter) {
+	
+	bootstrapRouter.start();
+	bootstrapView.start();
 });
 
