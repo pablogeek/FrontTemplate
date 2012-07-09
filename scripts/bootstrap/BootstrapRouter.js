@@ -1,43 +1,47 @@
 define(['jquery', 
 	'underscore', 
 	'backbone',
-	'view/option1',
-	'view/option2',
-	'view/option3',
-	'view/option4'], function($, _, backbone, option1, option2, option3, option4) {
-	
-	var BootstrapRouter = Backbone.Router.extend({
-		routes: {
-			'': 'option1',
-			'option2': 'option2',
-			'option3': 'option3',
-			'option4': 'option4'
-		},
+	'view/diet/diet',
+	'view/calendar/calendar',
+	'view/evolution/evolution',
+	'view/profile/profile',
+    'view/profile/preferences'], 
+function($, _, backbone, diet, calendar, evolution, profile, preferences) {
+    var BootstrapRouter = Backbone.Router.extend({
+    	routes: {
+            '': 'diet',
+    		'diet': 'diet',
+    		'calendar': 'calendar',
+    		'evolution': 'evolution',
+    		'profile': 'profile',
+    		'preferences': 'preferences'
+    	},
 
-		option1: function() {
-			console.log('entra');
-			option1.render();
-		},
+    	diet: function() {
+    	    diet.render();
+    	},
 
-		option2: function() {
-			option2.render();
-		},
+    	calendar: function() {
+    		calendar.render();
+    	},
 
-		option3: function() {
-			option3.render();
-		},
+    	evolution: function() {
+    		evolution.render();
+    	},
 
-		option4: function() {
-			option4.render();
-		}
-	});
+    	profile: function() {
+    		profile.render();
+    	},
+        
+    	preferences: function() {
+    		preferences.render();
+        }
+    });
 
-	BootstrapRouter.prototype.start = function () {
-		var bootstrapRouter = new BootstrapRouter();
-		Backbone.history.start();
-	};
+    BootstrapRouter.prototype.start = function () {
+    	var bootstrapRouter = new BootstrapRouter();
+    	Backbone.history.start();
+    };
 
-
-	return new BootstrapRouter();
-
+    return new BootstrapRouter();
 });
