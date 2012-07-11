@@ -1,3 +1,7 @@
+/**
+ * General router dispatcher with not reload page.
+ * @author Alvaro Nistal <alvaro.nistal@gmail.com>
+ */
 define(['jquery', 
 	'underscore', 
 	'backbone',
@@ -5,16 +9,20 @@ define(['jquery',
 	'view/calendar/calendar',
 	'view/evolution/evolution',
 	'view/profile/profile',
-    'view/profile/preferences'], 
-function($, _, backbone, diet, calendar, evolution, profile, preferences) {
+    'view/profile/preferences'], function($, _, backbone, diet, calendar, evolution, profile, preferences) {
     var BootstrapRouter = Backbone.Router.extend({
     	routes: {
-            '': 'diet',
+            '': 'intro',
+            'timeline': 'timeline',
     		'diet': 'diet',
     		'calendar': 'calendar',
     		'evolution': 'evolution',
     		'profile': 'profile',
     		'preferences': 'preferences'
+    	},
+
+        timeline: function() {
+    	    //timeline.render();
     	},
 
     	diet: function() {
